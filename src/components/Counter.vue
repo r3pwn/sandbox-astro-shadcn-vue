@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Button } from '@/components/ui/button'
+import { Typography } from './ui/typography';
 
 const count = ref(0);
 const add = () => count.value++;
@@ -10,7 +11,7 @@ const subtract = () => count.value--;
 <template>
 	<div class="counter">
 		<Button @click="subtract">-</Button>
-		<pre>{{ count }}</pre>
+		<Typography display="code">{{ count }}</Typography>
 		<Button @click="add">+</Button>
 	</div>
 	<div class="counter-message">

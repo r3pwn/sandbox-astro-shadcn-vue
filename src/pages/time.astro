@@ -1,6 +1,7 @@
 ---
 import MainLayout from "@/layouts/main-layout.astro";
 import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
 import { invalidate } from "../services/isr";
 
 Astro.locals.cache(60);
@@ -13,7 +14,10 @@ if (Astro.request.method === "POST") {
 ---
 
 <MainLayout title="Current Time">
-  <h1>The current time is: {currentTime}</h1>
+  <Typography display="heading-sm">
+    The current time is:
+    <Typography display="code">{currentTime}</Typography>
+  </Typography>
   <form method="post">
     <Button>Invalidate</Button>
   </form>
