@@ -1,6 +1,10 @@
 ---
+import MainLayout from "@/layouts/main-layout.astro";
+import { Button } from "@/components/ui/button";
 import { invalidate } from "../services/isr";
+
 Astro.locals.cache(60);
+
 const currentTime = new Date().toLocaleTimeString();
 
 if (Astro.request.method === "POST") {
@@ -8,14 +12,9 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<html>
-  <head>
-    <title>Current Time</title>
-  </head>
-  <body>
-    <h1>The current time is: {currentTime}</h1>
-    <form method="post">
-      <button type="submit">Invalidate</button>
-    </form>
-  </body>
-</html>
+<MainLayout title="Current Time">
+  <h1>The current time is: {currentTime}</h1>
+  <form method="post">
+    <Button>Invalidate</Button>
+  </form>
+</MainLayout>

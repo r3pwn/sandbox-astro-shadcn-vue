@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { Button } from '@/components/ui/button'
 
 const count = ref(0);
 const add = () => count.value++;
@@ -8,9 +9,9 @@ const subtract = () => count.value--;
 
 <template>
 	<div class="counter">
-		<button @click="subtract">-</button>
+		<Button @click="subtract">-</Button>
 		<pre>{{ count }}</pre>
-		<button @click="add">+</button>
+		<Button @click="add">+</Button>
 	</div>
 	<div class="counter-message">
 		<slot />
