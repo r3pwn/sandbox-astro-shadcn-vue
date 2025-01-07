@@ -6,6 +6,11 @@ const shouldSkipCache = (req: APIContext) => {
   if (req.request.method !== "GET") {
     return true;
   }
+  // also skip caching in dev mode
+  const { DEV } = import.meta.env;
+  if (DEV) {
+    return true;
+  }
 };
 
 const requestHandler: MiddlewareHandler = async (req, next) => {
