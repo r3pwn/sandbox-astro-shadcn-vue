@@ -9,26 +9,12 @@ const subtract = () => count.value--;
 </script>
 
 <template>
-	<div class="counter">
+	<div class="grid text-3xl	grid-cols-3	mt-8 place-items-center">
 		<Button @click="subtract">-</Button>
 		<Typography display="code">{{ count }}</Typography>
 		<Button @click="add">+</Button>
 	</div>
-	<div class="counter-message">
+	<div class="text-center">
 		<slot />
 	</div>
 </template>
-
-<style>
-.counter {
-	display: grid;
-	font-size: 2em;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	margin-top: 2em;
-	place-items: center;
-}
-
-.counter-message {
-	text-align: center;
-}
-</style>
